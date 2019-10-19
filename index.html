@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules\bootstrap-social\bootstrap-social.css">
+    <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Feast</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <div class="navbar-toggler-icon"></div>  
+            </button>
+            <a class="navbar-brand mr-auto" href="#"style="font-family: Comic Sans MS;">Feast</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+               <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link"href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="aboutus.html"><span class="fa fa-info fa-lg"></span> About Us</a></li>
+                <li class="nav-item"><a class="nav-link"href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                <li class="nav-item"><a class="nav-link"href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+               </ul> 
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+    	<div class="row align-items-center"style="padding-top:0.75%">
+    		<div class="col col-md-6 offset-md-3">
+                  <div class="card">
+                    <h3 class="card-header bg-light text-center">Sign Up</h3>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <div class="col-6 col-md-4 offset-md-2">
+                                    <input type="text" id="firstname" name="firstname"
+                                    placeholder="First Name" class="form-control" required>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" id="lastname" name="lastname"placeholder="Last Name" class="form-control" required>
+                                </div>    
+                            </div>
+                            <div class="form-group row">
+                                <div class="col col-md-8 offset-md-2">
+                                    <input type="email" name="email" id="email"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                     
+                                    placeholder="Email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col col-md-8 offset-md-2">
+                                    <input type="tel" name="num" id="num"
+                                    pattern="^\d{10}$" placeholder="Mobile Number" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col col-md-8 offset-md-2">
+                                    <input type="password" name="pass" id="pass"placeholder="New Password"class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col col-md-8 offset-md-2">
+                                    <input type="password" name="conpass" id="conpass"
+                                    placeholder="Confirm Password"class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                            <div class="col-2 offset-md-2">      
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"type="radio" name="inlineRadioOptions"id="male"value="male">
+                                <label for="male" class="form-check-label">Male</label>
+                            </div>
+                            </div>
+                            <div class="col-2"> 
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"type="radio" name="inlineRadioOptions"id="female"value="female">
+                                <label for="female" class="form-check-label">Female</label>
+                            </div>
+                            </div>
+                            </div>
+                                <div class="form-row">
+                                <label for="bday" class="col-form-label offset-md-2"><strong>Birthday</strong></label>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-2 offset-md-2">
+                                <select id="month" class="form-control">
+                                    <option selected>Month</option>
+                                    <option>January</option>
+                                    <option>February</option>      
+                                    <option>March</option>      
+                                    <option>April</option>      
+                                    <option>May</option>      
+                                    <option>June</option>      
+                                    <option>July</option>      
+                                    <option>August</option>      
+                                    <option>September</option>      
+                                    <option>October</option>      
+                                    <option>November</option>      
+                                    <option>December</option>
+                                </select>
+                                </div>
+                                <div class="form-group col-2">
+                                <select id="date" class="form-control">
+                                    <option selected>Date</option>
+                                    <option>1</option>      
+                                    <option>2</option>      
+                                    <option>3</option>      
+                                    <option>4</option>      
+                                    <option>5</option>      
+                                    <option>6</option>      
+                                    <option>7</option>      
+                                    <option>8</option>      
+                                    <option>9</option>      
+                                    <option>10</option>      
+                                    <option>11</option>      
+                                    <option>12</option>      
+                                    <option>13</option>      
+                                    <option>14</option>      
+                                    <option>15</option>      
+                                    <option>16</option>      
+                                    <option>17</option>      
+                                    <option>18</option>      
+                                    <option>19</option>      
+                                    <option>20</option>      
+                                    <option>21</option>      
+                                    <option>22</option>      
+                                    <option>23</option>      
+                                    <option>24</option>      
+                                    <option>25</option>      
+                                    <option>26</option>      
+                                    <option>27</option>      
+                                    <option>28</option>      
+                                    <option>29</option>      
+                                    <option>30</option>      
+                                    <option>31</option>    
+                                </select>
+                                </div>
+                                <div class="form-group col-2">
+                                <select id="Year" class="form-control">
+                                    <option selected>Year</option>
+                                    <option>1990</option>
+                                    <option>1991</option>
+                                    <option>1992</option>
+                                    <option>1993</option>
+                                    <option>1994</option>
+                                    <option>1995</option>
+                                    <option>1996</option>
+                                    <option>1997</option>
+                                    <option>1998</option>
+                                    <option>1999</option>      
+                                    <option>2000</option>      
+                                    <option>2001</option>      
+                                    <option>2002</option>      
+                                    <option>2003</option>      
+                                    <option>2004</option>      
+                                    <option>2005</option>      
+                                    <option>2006</option>      
+                                    <option>2007</option>      
+                                    <option>2008</option>
+                                    <option>2009</option>      
+                                    <option>2010</option>      
+                                    <option>2011</option>      
+                                    <option>2012</option>      
+                                    <option>2013</option>      
+                                    <option>2014</option>      
+                                    <option>2015</option>      
+                                    <option>2016</option>      
+                                    <option>2017</option>      
+                                    <option>2018</option>
+                                </select>
+                                </div> 
+                            </div>
+                            <div class="form-row">
+                            <div class="form-group col-auto offset-md-2">
+                                <div class="form-check">
+                                 <input class="form-check-input"type="checkbox" name="allow" id="allow">
+                                 <label class="form-check-label" for="allow">Check to receive Offers via email</label>
+                                </div>
+                            </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary offset-md-2" type="button">Sign Up</button>
+                        </form>
+                    </div>
+                  </div>
+    	    </div>
+        </div>
+    </div>
+    <script src="node_modules\jquery\dist\jquery.slim.min.js"></script>
+    <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
+    <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+</body>
+</html>
