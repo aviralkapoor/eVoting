@@ -16,6 +16,14 @@ body{
 	background-color: #4ABDAC;
 	color: white;
 }
+.btn:hover{
+	border:3px solid #4ABDAC;
+	background-color:white;
+	color:#4ABDAC;
+}
+.form-control:hover{
+	border: 3px solid #4ABDAC;
+}
 .form-control{
 	border-radius: 45px;
 	border:2px solid #f4f4f4;
