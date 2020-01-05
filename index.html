@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="node_modules\bootstrap-social\bootstrap-social.css">
     <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Feast</title>
+    <title>eVoting</title>
 </head>
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -18,13 +18,10 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
             <div class="navbar-toggler-icon"></div>  
             </button>
-            <a class="navbar-brand mr-auto" href="#"style="font-family: Comic Sans MS;">Feast</a>
+            <a class="navbar-brand mr-auto" href="#"style="font-family:Lato">eVoting</a>
             <div class="collapse navbar-collapse" id="Navbar">
                <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link"href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="aboutus.html"> About Us</a></li>
-                <li class="nav-item"><a class="nav-link"href="#">Menu</a></li>
-                <li class="nav-item"><a class="nav-link"href="contactus.html">Contact</a></li>
                <li class="nav-item"><a class="nav-link"data-toggle="modal" href="#loginmodal"><i class="fa fa-sign-in"></i>Log In</a></li>
                </ul>
             </div>
@@ -56,9 +53,9 @@
                             <br>
                             <div class="form-group row">
                                 <div class="col-6">
-                                    <div>Forgot Password?</div>
-                                    <a href="#"class="text-custom">Send verification code</a>
-                                    <div>Have'nt registered yet?</div>
+                                    <p>Forgot Password?</p>
+                                    <a data-toggle="modal" href="#verify"class="text-custom" data-dismiss="modal">Send verification code</a>
+                                    <p>Have'nt registered yet?</p>
                                     <a href="signup.html"class="text-custom">Sign Up</a>
                                 </div>
                                 <div class="col-6 col-md-4 offset-md-2">
@@ -69,7 +66,31 @@
                     </div>
             </div>
         </div>
-    </div>
+        </div>
+        <div id="verify" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title card-custom">Forget Password</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="form-group row">
+                                <div class="col col-md-6 offset-md-2">
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="from-group row">
+                                <div class="col col-md-6 offset-md-2">
+                                    <button type="submit" class="btn">Send Code</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 <script src="node_modules\jquery\dist\jquery.slim.min.js"></script>
 <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
 <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
