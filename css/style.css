@@ -1,7 +1,6 @@
 body{
 	padding:50px 0px 0px 0px;
 	z-index:0;
-	background: #f4f4f4;
 }
 .navbar-dark{
 	background-color: #4ABDAC;
@@ -15,6 +14,12 @@ body{
 	font-weight: 500;
 	background-color: #4ABDAC;
 	color: white;
+}
+.jumbotron{
+	background-color:#4ABDAC;
+}
+.color{
+	background-color: #f4f4f4;
 }
 .btn:hover{
 	border:3px solid #4ABDAC;
