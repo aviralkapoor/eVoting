@@ -18,6 +18,10 @@ body{
 .jumbotron{
 	background-color:#4ABDAC;
 }
+footer{
+	padding:30px 0px 20px 0px;
+	background-color: #f4f4f4;
+}
 .color{
 	background-color: #f4f4f4;
 }
