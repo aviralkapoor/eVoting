@@ -12,6 +12,9 @@ body{
 	top: 50% !important;
 	transform: translateY(-50%) !important;
 }
+.conduct-content{
+	display: none;
+}
 .btn{
 	padding: 8px 50px;
 	border-radius: 45px;

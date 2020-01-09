@@ -119,10 +119,21 @@
                     </div>
                     <div class="modal-body">
                             <div class="row">
-                                <div class="col-auto col-md-4 offset-md-2">
-                                    <p><a class="text-custom" href="#">Conduct an Election</a></p>
-                                    <p><a class="text-custom" href="#">Conduct a Quiz</a></p>
-                                    <p><a class="text-custom" href="#">Conduct a Survey</a></p>
+                                <div class="col-12 col-md-5 offset-md-1">
+                                    <p><a class="text-custom" onmouseover="addText_conduct('election')" href="#">Conduct an Election</a></p>
+                                    <p><a class="text-custom" onmouseover="addText_conduct('quiz')" href="#">Conduct a Quiz</a></p>
+                                    <p><a class="text-custom" onmouseover="addText_conduct('survey')" href="#">Conduct a Survey</a></p>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div id="election" class="conduct-content" style="display: block;"><p>"A formal and organized choice by vote of a person for a 
+                                        political office or other position."</p>
+                                    </div>
+                                    <div id="quiz" class="conduct-content"><p>"A test of knowledge, especially as a competition between 
+                                        individuals or teams as a form of entertainment."</p>
+                                    </div>
+                                    <div id="survey" class="conduct-content"><p>"Examine and record the area and features of goods so as to construct a
+                                         map, plan, or description."</p>
+                                    </div>
                                 </div>
                             </div>
                     </div>
@@ -156,6 +167,7 @@
                 </div>
             </div>
         </footer>
+<script src="js/script.js"></script>
 <script src="node_modules\jquery\dist\jquery.slim.min.js"></script>
 <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
 <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
