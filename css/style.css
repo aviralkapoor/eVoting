@@ -3,7 +3,14 @@ body{
 	z-index:0;
 }
 .navbar-dark{
-	background-color: #83cbbf;
+	background-color: #83CBBF;
+}
+.nav-link{
+	color: white;
+}
+.modal-center{
+	top: 50% !important;
+	transform: translateY(-50%) !important;
 }
 .btn{
 	padding: 8px 50px;

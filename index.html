@@ -22,8 +22,9 @@
             <a class="navbar-brand mr-auto" href="#"style="font-family:Lato"><img src="img/evote icon.png" width="50px"></a>
             <div class="collapse navbar-collapse" id="Navbar">
                <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link"href="#">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link"href="#"><i class="fa fa-question"></i>FAQ</a></li>
                <li class="nav-item"><a class="nav-link"data-toggle="modal" href="#loginmodal"><i class="fa fa-sign-in"></i>Log In</a></li>
+               <li class="nav-item"><a class="nav-link" href="signup.html"><i class="fa fa-user-plus"></i>Sign Up</a></li>
                </ul>
             </div>
         </div>
@@ -31,7 +32,7 @@
     <header class="jumbotron">
         <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <img src="\img\evote logo.png" width="250px">
             </div>
             <div class="col-12 col-md-6">
@@ -40,7 +41,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
-                <button class="btn">Conduct</button>
+                <a class="btn" data-toggle="modal" href="#conduct">Conduct</a>
             </div>
         </div>
         </div>
@@ -95,16 +96,35 @@
                     <div class="modal-body">
                         <form action="#">
                             <div class="form-group row">
-                                <div class="col col-md-6 offset-md-2">
+                                <div class="col col-md-4 offset-md-2">
                                     <input type="text" class="form-control" name="email" id="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="from-group row">
-                                <div class="col col-md-6 offset-md-2">
+                                <div class="col-12 col-md-6 offset-md-2">
                                     <button type="submit" class="btn">Send Code</button>
                                 </div>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="conduct" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg modal-center" role="content">
+                <div class="modal-content">
+                    <div class="modal-header bg-light">
+                        <h4 class="modal-title card-custom">Conduct</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                            <div class="row">
+                                <div class="col-auto col-md-4 offset-md-2">
+                                    <p><a class="text-custom" href="#">Conduct an Election</a></p>
+                                    <p><a class="text-custom" href="#">Conduct a Quiz</a></p>
+                                    <p><a class="text-custom" href="#">Conduct a Survey</a></p>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
