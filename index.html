@@ -7,7 +7,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules\bootstrap-social\bootstrap-social.css">
     <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/evote icon.png">
@@ -94,15 +93,15 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form action="#">
+                        <form action="/ajax/email" method="POST" onsubmit="return submitEmailForm(this);">
                             <div class="form-group row">
                                 <div class="col col-md-4 offset-md-2">
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                                    <input type="text" class="form-control" name="email" placeholder="Email" required>
                                 </div>
                             </div>
                             <div class="from-group row">
                                 <div class="col-12 col-md-6 offset-md-2">
-                                    <button type="button" class="btn">Send Code</button>
+                                    <button type="submit" class="btn">Send Code</button>
                                 </div>
                             </div>
                         </form>
@@ -167,6 +166,26 @@
                 </div>
             </div>
         </footer>
+<script>
+            function submitEmailForm(form){
+                var obj = new XMLHttpRequest();
+                obj.onreadystatechange = function(){
+                    if(obj.readyState == 4){
+                        if(obj.status == 200){
+                            var x = JSON.parse(obj.responseText);
+                            alert(x.message);
+                        }
+                        else{
+                            alert("XMLHttp Status: "+obj.status+";"+obj.statusText);
+                        }
+                    }
+                };
+                obj.open("post",form.action,true);
+                obj.setRequestHeader("Content-Type","application/json");
+                obj.send(JSON.stringify({"email": form.email.value}));
+                return false;
+            }
+</script>
 <script src="js/script.js"></script>
 <script src="node_modules\jquery\dist\jquery.slim.min.js"></script>
 <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
