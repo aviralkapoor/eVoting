@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
     <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -23,7 +22,7 @@
             <div class="collapse navbar-collapse" id="Navbar">
                <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link"href="#"><i class="fa fa-question mr-2"></i>FAQ</a></li>
-               <li class="nav-item"><a class="nav-link"data-toggle="modal" href="#loginmodal"><i class="fa fa-sign-in mr-2"></i>Log In</a></li>
+               <li class="nav-item"><a class="nav-link"data-toggle="modal" href="#loginmodal"><i class="fas fa-sign-in-alt mr-2"></i>Log In</a></li>
                <li class="nav-item"><a class="nav-link" href="signup.html"><i class="fa fa-user-plus mr-2"></i>Sign Up</a></li>
                <li class="nav-item"><a class="nav-link"href="#"><i class="fas fa-phone-alt mr-2"></i>Contact Us</a></li>
                </ul>
@@ -158,13 +157,14 @@
                             Mahatma Gandhi Rd, Potheri, SRM Nagar, Kattankulathur, <br>
                             Tamil Nadu 603203<br>
                             <i class="fa fa-phone"></i> :99XXXX9990<br>
-                            <i class="fa fa-envelope"></i> :<a href="mailto:contactus@eVoting.com">contactus@eVoting.com</a>
+                            <i class="fa fa-envelope"></i> :<a href="mailto:evoting84897@gmail.com">evoting84897@gmail.com</a>
                         </address>
                         <h4>Follow Us</h4>
                         <i class="fab fa-facebook-square fa-3x pr-5"></i>
                         <i class="fab fa-twitter-square fa-3x pr-5"></i>
                         <i class="fab fa-instagram fa-3x pr-5"></i>
                         <i class="fab fa-snapchat fa-3x "></i>
+                        <div id="ip"></div>
                     </div>
                 </div>
                 <div class="row  mt-5 justify-content-center">
@@ -174,29 +174,14 @@
                 </div>
             </div>
         </footer>
-<script>
-            function submitEmailForm(form){
-                var obj = new XMLHttpRequest();
-                obj.onreadystatechange = function(){
-                    if(obj.readyState == 4){
-                        if(obj.status == 200){
-                            var x = JSON.parse(obj.responseText);
-                            alert(x.message);
-                        }
-                        else{
-                            alert("XMLHttp Status: "+obj.status+";"+obj.statusText);
-                        }
-                    }
-                };
-                obj.open("post",form.action,true);
-                obj.setRequestHeader("Content-Type","application/json");
-                obj.send(JSON.stringify({"email": form.email.value}));
-                return false;
-            }
-</script>
-<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="node_modules\jquery\dist\jquery.slim.min.js"></script>
 <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
 <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+<script src="js/mail.js"></script>
+<script src="js/ip.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
