@@ -58,23 +58,23 @@
                   <div class="card">
                     <h3 class="card-header bg-light text-center card-custom">Sign Up</h3>
                     <div class="card-body">
-                        <form action="#" onsubmit="">
+                        <form  action="/signup" method="POST" onsubmit="return submitsignupForm(this) & verify(this.email);">
                             <div class="form-group row">
                                 <div class="col col-md-8 offset-md-2">
-                                    <input type="text" id="name" name="name"
+                                    <input type="text"  name="name" id="name"
                                     placeholder="Your Name" class="form-control" required>
                                 </div>    
                             </div>
                             <div class="form-group row">
                                 <div class="col col-md-8 offset-md-2">
-                                    <input type="email" name="email" id="email"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                      
                                     placeholder="Email" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col col-md-8 offset-md-2">
-                                    <input type="tel" name="num" id="num"
+                                    <input type="tel" name="phn_num" id="phn_num"
                                     pattern="^\d{10}$" placeholder="Mobile Number" class="form-control" required>
                                 </div>
                             </div>
@@ -92,23 +92,23 @@
                             <div class="form-row">
                             <div class="col-4 col-md-2 offset-md-2">      
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input"type="radio" name="Options"id="male"value="male">
+                                <input class="form-check-input"type="radio" name="gen" id="male"value="M" checked>
                                 <label for="male" class="form-check-label">Male</label>
                             </div>
                             </div>
                             <div class="col-4 col-md-2"> 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input"type="radio" name="Options"id="female"value="female" checked>
+                                <input class="form-check-input"type="radio" name="gen" id="female"value="F">
                                 <label for="female" class="form-check-label">Female</label>
                             </div>
                             </div>
                             </div>
                                 <div class="form-row">
-                                <label for="bday" class="col-form-label offset-md-2"><strong>Birthday</strong></label>
+                                <label for="bday" class="col-form-label offset-md-2"><strong>DOB</strong></label>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-3 col-md-2 offset-md-2">
-                                <select id="month" class="form-control" style="padding: 7px;">
+                                <select id="month" name="month" class="form-control" style="padding: 7px;" required>
                                     <option selected>Month</option>
                                     <option>January</option>
                                     <option>February</option>      
@@ -125,7 +125,7 @@
                                 </select>
                                 </div>
                                 <div class="form-group col-3 col-md-2">
-                                <select id="date" class="form-control"style="padding: 7px;">
+                                <select id="date" name="day" class="form-control"style="padding: 7px;" required>
                                     <option selected>Date</option>
                                     <option>1</option>      
                                     <option>2</option>      
@@ -161,7 +161,7 @@
                                 </select>
                                 </div>
                                 <div class="form-group col-3 col-md-2">
-                                <select id="Year" class="form-control"style="padding: 7px;">
+                                <select id="year" name="year" class="form-control"style="padding: 7px;" required>
                                     <option selected>Year</option>
                                     <option>1990</option>
                                     <option>1991</option>
@@ -195,14 +195,6 @@
                                 </select>
                                 </div> 
                             </div>
-                            <div class="form-row">
-                            <div class="form-group col-auto offset-md-2">
-                                <div class="form-check">
-                                 <input class="form-check-input"type="checkbox" name="allow" id="allow">
-                                 <label class="form-check-label" for="allow">Check to receive Updates via email</label>
-                                </div>
-                            </div>
-                            </div>
                             <button type="submit" class="btn offset-md-2">Sign Up</button>
                         </form>
                     </div>
@@ -213,6 +205,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/signupdb.js"></script>
 <script src="node_modules\jquery\dist\jquery.slim.min.js"></script>
 <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
 <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
