@@ -43,12 +43,14 @@ function conf(e){
     {
         confirm_mod_hide();
         submitsignupForm();
+        setTimeout(()=>{location.reload(true)},2500);
     }
     else
     {
         var al=document.getElementsByClassName("al-w");
         al[0].style.display="block";
         setTimeout(confirm_mod_hide,2500);
+        setTimeout(()=>{location.reload(true)},2500);
     }
 }
 function confirm_mod_show(){
@@ -66,14 +68,24 @@ function submitsignupForm(){
     const phn_num=document.getElementById('phn_num').value;
     const pass=document.getElementById('pass').value;
     const email=document.getElementById('email').value;
-    const gen=document.getElementById('gen').value;
+    var gen;
+    if(document.getElementById('genM').checked==true)
+    {
+        gen=document.getElementById('genM').value;
+    }
+    else
+    {
+        gen=document.getElementById('genF').value;
+    }
     const year=document.getElementById('year').value;
     const month=document.getElementById('month').value;
     const date=document.getElementById('date').value;
+    
     submit(name,email,phn_num,pass,gen,year,month,date);
+    
     var al=document.getElementsByClassName("al");
     al[0].style.display="block";
-    setTimeout(()=>{al[0].style.display="none";},2500);
+    setTimeout(()=>{al[0].style.display="none";},3000);
 }
 function submit(name,email,phn_num,pass,gen,year,month,date){
 
