@@ -61,3 +61,19 @@ footer{
 {
 	color: #4ABDAC;
 }
+.al{
+	text-align: center;
+	padding: 10px;
+	background: #79C879;
+	color: #f4f4f4;
+	margin-bottom: 10px;
+	display: none;
+}
+.al-w{
+	text-align: center;
+	padding: 10px;
+	background:#CC3300;
+	color: #f4f4f4;
+	margin-bottom: 10px;
+	display: none;
+}

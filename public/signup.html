@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/evote icon.png">
-    <title>eVote</title>
+    <title>eVoting</title>
 </head>
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -35,16 +35,19 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="POST" onsubmit="">
+                    <form id="form-con">
+                        <div class="al-w">
+                            Wrong Code
+                        </div>
                         <div class="form-group row">
                             <div class="col-12 col-md-5 offset-md-2">
-                                <label for="Code" class="col-form-label">Enter the code sent to your Email id.</label>
-                                <input type="text" class="form-control" name="Code" placeholder="Code" required>
+                                <label for="Code" class="col-form-label">Enter the Code.</label>
+                                <input type="text" class="form-control" name="Code" id="code" placeholder="Code" required>
                             </div>
                         </div>
                         <div class="from-group row">
                             <div class="col-12 col-md-6 offset-md-2">
-                                <button type="submit" class="btn">Verify</button>
+                                <button type="submit" id="submit" class="btn">Verify</button>
                             </div>
                         </div>
                     </form>
@@ -58,7 +61,10 @@
                   <div class="card">
                     <h3 class="card-header bg-light text-center card-custom">Sign Up</h3>
                     <div class="card-body">
-                        <form  action="/signup" method="POST" onsubmit="return submitsignupForm(this) & verify(this.email);">
+                        <form id="form">
+                            <div class="al">
+                                Your account has been created.
+                            </div>
                             <div class="form-group row">
                                 <div class="col col-md-8 offset-md-2">
                                     <input type="text"  name="name" id="name"
@@ -92,13 +98,13 @@
                             <div class="form-row">
                             <div class="col-4 col-md-2 offset-md-2">      
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input"type="radio" name="gen" id="male"value="M" checked>
+                                <input class="form-check-input"type="radio" name="gen" id="gen"value="M" checked>
                                 <label for="male" class="form-check-label">Male</label>
                             </div>
                             </div>
                             <div class="col-4 col-md-2"> 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input"type="radio" name="gen" id="female"value="F">
+                                <input class="form-check-input"type="radio" name="gen" id="gen"value="F">
                                 <label for="female" class="form-check-label">Female</label>
                             </div>
                             </div>
@@ -195,17 +201,32 @@
                                 </select>
                                 </div> 
                             </div>
-                            <button type="submit" class="btn offset-md-2">Sign Up</button>
+                            <button id="submit" class="btn offset-md-2">Sign Up</button>
                         </form>
                     </div>
                   </div>
     	    </div>
         </div>
     </div>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyA1qYj3F3b26NKF7SIeY7iGIGtDLMRWzMI",
+    authDomain: "evoting-c3aea.firebaseapp.com",
+    databaseURL: "https://evoting-c3aea.firebaseio.com",
+    projectId: "evoting-c3aea",
+    storageBucket: "evoting-c3aea.appspot.com",
+    messagingSenderId: "1061247565510",
+    appId: "1:1061247565510:web:b0146f7f6096709aeaa1c7",
+    measurementId: "G-8E2ZK19HQ2"
+  };
+firebase.initializeApp(firebaseConfig);
+</script>
+<script src="js/signupdb.js"></script>    
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="js/signupdb.js"></script>
 <script src="node_modules\jquery\dist\jquery.slim.min.js"></script>
 <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
 <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>

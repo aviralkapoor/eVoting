@@ -2,7 +2,6 @@ const functions = require('firebase-functions');
 var express =require('express');
 var nodemailer = require('nodemailer');
 const app=express();
-var otp=require("./otp");
 
 
 app.post("/ajax/email",function(request,response){
@@ -16,12 +15,12 @@ app.post("/ajax/email",function(request,response){
         }
         });
         var email = `${request.body.email}`;
-        var code=otp.generateOTP();
+        var code=`${request.body.code}`;
         var mailOptions = {
             from: 'evoting84897@gmail.com',
             to: email,
             subject: 'Verification Email',
-            html:'<html>Your verification code is:<br><h3>'+code+'</h3>'
+            html:'<html>Your verification code is:<br><h3>'+code+'</h3></html>'
             };
           
             transporter.sendMail(mailOptions, function(error, info){
@@ -33,6 +32,7 @@ app.post("/ajax/email",function(request,response){
               response.json({ message: 'Verification code sent.' });
             }
             });
+            return code;
 });
 
 exports.app = functions.https.onRequest(app);
