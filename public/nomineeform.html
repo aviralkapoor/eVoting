@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="img/evote icon.png">
     <title>eVoting</title>
 </head>
-<body>
+<body onload="disp()">
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
@@ -27,49 +27,18 @@
             </div>
         </div>
     </nav>
-    <div id="vercode" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" role="content">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h4 class="modal-title card-custom">Verify Email</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form id="form-con">
-                        <div class="al-w">
-                            Wrong Code
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-12 col-md-5 offset-md-2">
-                                <label for="Code" class="col-form-label">Enter the Code.</label>
-                                <input type="text" class="form-control" name="Code" id="code" placeholder="Code" required>
-                            </div>
-                        </div>
-                        <div class="from-group row">
-                            <div class="col-12 col-md-6 offset-md-2">
-                                <button type="submit" id="submit" class="btn">Verify</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container">
     	<div class="row align-items-center"style="padding-top:0.75%">
     		<div class="col col-md-6 offset-md-3">
                   <div class="card">
-                    <h3 class="card-header bg-light text-center card-custom">Sign Up</h3>
-                    <div class="card-body">
-                        <form id="form">
-                            <div class="al">
-                                Your account has been created.
-                            </div>
+                    <h3 class="card-header bg-light text-center card-custom"><div id="nom"></div></h3>
+                    <div class="card-body" id="C-B">
+                    <form id="form">
                             <div class="form-group row">
                                 <div class="col col-md-8 offset-md-2">
                                     <input type="text"  name="name" id="name"
                                     placeholder="Your Name" class="form-control" required>
-                                </div>    
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col col-md-8 offset-md-2">
@@ -85,17 +54,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col col-md-8 offset-md-2">
-                                    <input type="password" name="pass" id="pass"placeholder="New Password"class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col col-md-8 offset-md-2">
-                                    <input type="password" name="conpass" id="conpass"
-                                    placeholder="Confirm Password"class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-row">
                             <div class="col-4 col-md-2 offset-md-2">      
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input"type="radio" name="gen" id="genM"value="M" checked>
@@ -110,7 +68,9 @@
                             </div>
                             </div>
                                 <div class="form-group row">
-                                <label for="bday" class="col-form-label offset-md-2"><strong>DOB</strong></label>
+                                <div class="col col-m-8 offset-md-2">
+                                <label for="bday" class="col-form-label"><strong>DOB</strong></label>
+                                </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="form-group col-3 col-md-2 offset-md-2">
@@ -201,8 +161,11 @@
                                 </select>
                                 </div> 
                             </div>
-                            <button id="submit" class="btn offset-md-2">Sign Up</button>
                         </form>
+                        <div id="cand"></div>
+                        <button id="add" onclick="addcand()"  class="text-custom offset-md-2">Add Candidate</button>
+                        <button id="add" onclick="removecand()"  class="text-custom offset-md-1">Remove Candidate</button>
+                        <button id="submit" class="btn offset-md-2">Submit</button>
                     </div>
                   </div>
     	    </div>
@@ -223,7 +186,7 @@ var firebaseConfig = {
   };
 firebase.initializeApp(firebaseConfig);
 </script>
-<script src="js/signupdb.js"></script>    
+<script src="js/script.js"></script>    
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

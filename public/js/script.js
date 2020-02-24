@@ -5,3 +5,25 @@ function addText_conduct(item){
   }
     document.getElementById(item).style.display="block";
 }
+document.getElementById('form').addEventListener('submit',nominee);
+var sub;
+function nominee(e){
+  e.preventDefault();
+  sub=document.getElementById('sub').value;
+  localStorage.setItem("sub",sub);
+  window.open("../nomineeform.html","_self");
+}
+function disp(){
+  document.getElementById('nom').innerHTML="Nominee form for "+localStorage.getItem("sub");
+  return;
+}
+var fm=document.getElementById('form');
+function addcand()
+{
+
+document.getElementById('cand').innerHTML+="<hr>"+fm;
+}
+function removecand()
+{
+document.getElementById('cand').innerHTML="";
+}

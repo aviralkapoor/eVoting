@@ -27,93 +27,47 @@
             </div>
         </div>
     </nav>
-    <div id="vercode" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" role="content">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h4 class="modal-title card-custom">Verify Email</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form id="form-con">
-                        <div class="al-w">
-                            Wrong Code
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-12 col-md-5 offset-md-2">
-                                <label for="Code" class="col-form-label">Enter the Code.</label>
-                                <input type="text" class="form-control" name="Code" id="code" placeholder="Code" required>
-                            </div>
-                        </div>
-                        <div class="from-group row">
-                            <div class="col-12 col-md-6 offset-md-2">
-                                <button type="submit" id="submit" class="btn">Verify</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container">
     	<div class="row align-items-center"style="padding-top:0.75%">
     		<div class="col col-md-6 offset-md-3">
                   <div class="card">
-                    <h3 class="card-header bg-light text-center card-custom">Sign Up</h3>
+                    <h3 class="card-header bg-light text-center card-custom">Election</h3>
                     <div class="card-body">
                         <form id="form">
-                            <div class="al">
-                                Your account has been created.
+                            <div class="al-w">
+                                Wrong Password
                             </div>
                             <div class="form-group row">
                                 <div class="col col-md-8 offset-md-2">
-                                    <input type="text"  name="name" id="name"
-                                    placeholder="Your Name" class="form-control" required>
+                                    <input type="text"  name="sub" id="sub"
+                                    placeholder="Subject" class="form-control" required>
                                 </div>    
                             </div>
                             <div class="form-group row">
                                 <div class="col col-md-8 offset-md-2">
-                                    <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                                     
-                                    placeholder="Email" class="form-control" required>
+                                    <select id="org" name="org" class="form-control" style="padding: 7px;" required>
+                                        <option selected>College</option>
+                                        <option>Office</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col col-md-8 offset-md-2">
-                                    <input type="tel" name="phn_num" id="phn_num"
-                                    pattern="^\d{10}$" placeholder="Mobile Number" class="form-control" required>
+                                <div class="col-4 offset-md-2">
+                                    <input type="time"  name="time" id="time" class="form-control" required>
+                                    <strong>24 hours format</strong>
                                 </div>
+                                <div class="col-4">
+                                    <input type="text"  name="dur" id="dur" pattern="^\d{2}$"
+                                    placeholder="Duration in hrs" class="form-control" required>
+                                </div>   
                             </div>
                             <div class="form-group row">
-                                <div class="col col-md-8 offset-md-2">
-                                    <input type="password" name="pass" id="pass"placeholder="New Password"class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col col-md-8 offset-md-2">
-                                    <input type="password" name="conpass" id="conpass"
-                                    placeholder="Confirm Password"class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                            <div class="col-4 col-md-2 offset-md-2">      
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input"type="radio" name="gen" id="genM"value="M" checked>
-                                <label for="male" class="form-check-label">Male</label>
+                                <div class="col-4 offset-md-2">
+                                <label for="dob" class="col-form-label"><strong>Date of Election</strong></label>
                             </div>
                             </div>
-                            <div class="col-4 col-md-2"> 
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input"type="radio" name="gen" id="genF"value="F">
-                                <label for="female" class="form-check-label">Female</label>
-                            </div>
-                            </div>
-                            </div>
-                                <div class="form-group row">
-                                <label for="bday" class="col-form-label offset-md-2"><strong>DOB</strong></label>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="form-group col-3 col-md-2 offset-md-2">
+                                <div id="dob"class="form-group row">
+                                <div class="form-group col-3 col-md-2 offset-md-2">
                                 <select required id="month" name="month" class="form-control" style="padding: 7px;">
                                     <option selected>Month</option>
                                     <option>January</option>
@@ -201,7 +155,12 @@
                                 </select>
                                 </div> 
                             </div>
-                            <button id="submit" class="btn offset-md-2">Sign Up</button>
+                            <div class="form-group row">
+                                <div class="col col-md-8 offset-md-2">
+                                    <input type="password" name="pass" id="pass"placeholder="Password"class="form-control" required>
+                                </div>
+                            </div>
+                            <button id="submit" class="btn offset-md-2">Conduct</button>
                         </form>
                     </div>
                   </div>
@@ -223,7 +182,7 @@ var firebaseConfig = {
   };
 firebase.initializeApp(firebaseConfig);
 </script>
-<script src="js/signupdb.js"></script>    
+<script src="js/script.js"></script>    
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
