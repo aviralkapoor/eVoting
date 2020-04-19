@@ -1,8 +1,24 @@
 const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+let serviceAccount = require('./eVoting');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://evoting-c3aea.firebaseio.com"
+});
+
+let db = admin.firestore();
 var express =require('express');
+var session = require('express-session');
+var path = require('path');
 var nodemailer = require('nodemailer');
 const app=express();
 
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
 
 app.post("/ajax/email",function(request,response){
 
@@ -10,7 +26,7 @@ app.post("/ajax/email",function(request,response){
         
         service: 'gmail',
         auth: {
-          user: 'evoting84897@gmail.com',
+          user: 'evoting84897',
           pass: 'Votingmail@123'
         }
         });
@@ -32,7 +48,34 @@ app.post("/ajax/email",function(request,response){
               response.json({ message: 'Verification code sent.' });
             }
             });
-            return code;
 });
+
+app.post("/login/",function (request,res){
+  var email=request.body.email;
+  var pass=request.body.password;
+  var docRef=db.collection("Users").doc(email);
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            if(pass==doc.data().pass)
+            {
+                request.session.loggedin=true;
+                request.session.email=email;
+                request.session.username=doc.data().name;
+                res.json({ url: "/homepage.html", name: request.session.username });
+            }
+            else
+            {
+                console.log("Wrong Password!");
+            }
+        } 
+        else 
+        {
+            console.log("No such User, Please register first.");
+        }
+    }).catch(function(error) {
+        console.log("Error getting User :", error);
+    });
+
+})
 
 exports.app = functions.https.onRequest(app);

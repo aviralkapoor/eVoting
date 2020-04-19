@@ -22,165 +22,95 @@
             <div class="collapse navbar-collapse" id="Navbar">
                <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link"href="#"><i class="fa fa-question mr-2"></i>FAQ</a></li>
-               <li class="nav-item"><a class="nav-link"data-toggle="modal" href="#loginmodal"><i class="fas fa-sign-in-alt mr-2"></i>Log In</a></li>
-               <li class="nav-item"><a class="nav-link" href="signup.html"><i class="fa fa-user-plus mr-2"></i>Sign Up</a></li>
-               <li class="nav-item"><a class="nav-link"href="#"><i class="fas fa-phone-alt mr-2"></i>Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link"href="#"><i class="fas fa-phone-alt mr-2"></i>Contact Us</a></li>
                </ul>
             </div>
         </div>
     </nav>
-    <header class="jumbotron">
-        <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <img src="\img\evote logo.png" width="250px">
-            </div>
-            <div class="col-12 col-md-6">
-                <img src=".\img\evote.GIF" width="250px">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <br>
-                <a class="btn ml-4" data-toggle="modal" href="#conduct">Conduct</a>
-            </div>
-        </div>
-        </div>
-    </header>
-        <div id="loginmodal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg"role="content">
+    <div id="verify" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header bg-light">
-                    <h4 class="modal-title card-custom">Log in</h4>
+                    <h4 class="modal-title card-custom">Forgot Password</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group row">
-                                <div class="col-6 col-md-4">
-                                    <input type="text" name="email" class="form-control" id="email"placeholder="Email Id">
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-                                </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="form-check">
-                                    <input type="checkbox" name="check" class="form-check-input" id="check">
-                                    <label for="check" class="form-check-label"><strong>Remember me</strong></label>
-                                    </div>
-                                </div>
+                <div class="modal-body">
+                    <form action="/ajax/email" method="POST" onsubmit="return submitEmailForm(this);">
+                        <div class="form-group row">
+                            <div class="col col-md-4 offset-md-2">
+                                <input type="text" class="form-control" name="email" placeholder="Email" required>
                             </div>
-                            <br>
-                            <div class="form-group row">
-                                <div class="col-6">
-                                    <p>Forgot Password?</p>
-                                    <a data-toggle="modal" href="#verify"class="text-custom" data-dismiss="modal">Send verification code</a>
-                                    <p>Have'nt registered yet?</p>
-                                    <a href="signup.html"class="text-custom">Sign Up</a>
-                                </div>
-                                <div class="col-6 col-md-4 offset-md-2">
-                                    <button type="submit"class="btn">Log in</button>
-                                </div>
+                        </div>
+                        <div class="from-group row">
+                            <div class="col-12 col-md-6 offset-md-2">
+                                <button type="submit" class="btn">Send Code</button>
                             </div>
-                        </form>
-                    </div>
-            </div>
-        </div>
-        </div>
-        <div id="verify" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg" role="content">
-                <div class="modal-content">
-                    <div class="modal-header bg-light">
-                        <h4 class="modal-title card-custom">Forgot Password</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/ajax/email" method="POST" onsubmit="return submitEmailForm(this);">
-                            <div class="form-group row">
-                                <div class="col col-md-4 offset-md-2">
-                                    <input type="text" class="form-control" name="email" placeholder="Email" required>
-                                </div>
-                            </div>
-                            <div class="from-group row">
-                                <div class="col-12 col-md-6 offset-md-2">
-                                    <button type="submit" class="btn">Send Code</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <div id="conduct" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg modal-center" role="content">
-                <div class="modal-content">
-                    <div class="modal-header bg-light">
-                        <h4 class="modal-title card-custom">Conduct</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                            <div class="row">
-                                <div class="col-12 col-md-5 offset-md-1">
-                                    <p><a class="text-custom" onmouseover="addText_conduct('election')" href="eleform.html">Conduct an Election</a></p>
-                                    <p><a class="text-custom" onmouseover="addText_conduct('quiz')" href="#">Conduct a Quiz</a></p>
-                                    <p><a class="text-custom" onmouseover="addText_conduct('survey')" href="#">Conduct a Survey</a></p>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div id="election" class="conduct-content" style="display: block;"><p>"A formal and organized choice by vote of a person for a 
-                                        political office or other position."</p>
-                                    </div>
-                                    <div id="quiz" class="conduct-content"><p>"A test of knowledge, especially as a competition between 
-                                        individuals or teams as a form of entertainment."</p>
-                                    </div>
-                                    <div id="survey" class="conduct-content"><p>"Examine and record the area and features of goods so as to construct a
-                                         map, plan, or description."</p>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
+    </div>
+    <div class="container mt-5">
+    <div class="card">
+        <div class="card-header card-custom">
+          Log in
         </div>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <ul class="list-group">
-                            <li class="list-group-item"><a href="#">Home</a></li>
-                            <li class="list-group-item"><a href="#">About Us</a></li>
-                        </ul c>
+        <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <div class="col-6 col-md-4">
+                        <input type="text" name="email" class="form-control" id="email"placeholder="Email Id">
                     </div>
-                    <div class="col-12 col-md-6">
-                        <h4>Our Address</h4>
-                        <address>
-                            SRM Institute of Science and Technology,<br>
-                            Mahatma Gandhi Rd, Potheri, SRM Nagar, Kattankulathur, <br>
-                            Tamil Nadu 603203<br>
-                            <i class="fa fa-phone"></i> :99XXXX9990<br>
-                            <i class="fa fa-envelope"></i> :<a href="mailto:evoting84897@gmail.com">evoting84897@gmail.com</a>
-                        </address>
-                        <h4>Follow Us</h4>
-                        <i class="fab fa-facebook-square fa-3x pr-5"></i>
-                        <i class="fab fa-twitter-square fa-3x pr-5"></i>
-                        <i class="fab fa-instagram fa-3x pr-5"></i>
-                        <i class="fab fa-snapchat fa-3x "></i>
-                        <div id="ip"></div>
+                    <div class="col-6 col-md-4">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="form-check">
+                        <input type="checkbox" name="check" class="form-check-input" id="check">
+                        <label for="check" class="form-check-label"><strong>Remember me</strong></label>
+                        </div>
                     </div>
                 </div>
-                <div class="row  mt-5 justify-content-center">
-                    <div class="col-auto">
-                        <p>&copy; Copyright 2020 eVoting</p>
+                <br>
+                <div class="form-group row">
+                    <div class="col-6">
+                        <p>Forgot Password?</p>
+                        <a data-toggle="modal" href="#verify"class="text-custom" data-dismiss="modal">Send verification code</a>
+                        <p>Have'nt registered yet?</p>
+                        <a href="signup.html"class="text-custom">Sign Up</a>
+                    </div>
+                    <div class="col-6 col-md-4 offset-md-2">
+                        <a class="btn" id="log" onclick="login_user();">Log in</a>
                     </div>
                 </div>
-            </div>
-        </footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="node_modules\jquery\dist\jquery.slim.min.js"></script>
-<script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
-<script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
-<script src="js/mail.js"></script>
-<script src="js/script.js"></script>
-</body>
-</html>
+            </form>
+        </div>
+      </div>
+      </div>
+      <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+        <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyA1qYj3F3b26NKF7SIeY7iGIGtDLMRWzMI",
+            authDomain: "evoting-c3aea.firebaseapp.com",
+            databaseURL: "https://evoting-c3aea.firebaseio.com",
+            projectId: "evoting-c3aea",
+            storageBucket: "evoting-c3aea.appspot.com",
+            messagingSenderId: "1061247565510",
+            appId: "1:1061247565510:web:b0146f7f6096709aeaa1c7",
+            measurementId: "G-8E2ZK19HQ2"
+          };
+        firebase.initializeApp(firebaseConfig);
+        </script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="node_modules\jquery\dist\jquery.slim.min.js"></script>
+      <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
+      <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+      <script src="js/mail.js"></script>
+      <script src="js/script.js"></script>
+      <script src="js/login.js"></script>
+      </body>
+      </html>

@@ -5,7 +5,7 @@ function addText_conduct(item){
   }
     document.getElementById(item).style.display="block";
 }
-document.getElementById('form').addEventListener('submit',nominee);
+//document.getElementById('form').addEventListener('submit',nominee);
 var sub;
 function nominee(e){
   e.preventDefault();
@@ -17,10 +17,10 @@ function disp(){
   document.getElementById('nom').innerHTML="Nominee form for "+localStorage.getItem("sub");
   return;
 }
-var fm=document.getElementById('form');
+
+//var fm=document.getElementById('form').value;
 function addcand()
 {
-
 document.getElementById('cand').innerHTML+="<hr>"+fm;
 }
 function removecand()

@@ -11,7 +11,9 @@ function generateOTP() {
     } 
     return OTP; 
 }
+
 const code=generateOTP();
+
 function mail(){
     const email=document.getElementById('email').value;
         var obj = new XMLHttpRequest();
@@ -43,14 +45,14 @@ function conf(e){
     {
         confirm_mod_hide();
         submitsignupForm();
-        setTimeout(()=>{location.reload(true)},2500);
+        setTimeout(()=>{window.open("/index.html","_self")},2000);
     }
     else
     {
         var al=document.getElementsByClassName("al-w");
         al[0].style.display="block";
         setTimeout(confirm_mod_hide,2500);
-        setTimeout(()=>{location.reload(true)},2500);
+        setTimeout(()=>{location.reload(true)},2000);
     }
 }
 function confirm_mod_show(){
