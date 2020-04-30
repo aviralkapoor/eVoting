@@ -65,12 +65,12 @@ app.post("/login/",function (request,res){
             }
             else
             {
-                console.log("Wrong Password!");
+                res.json({wp:"Wrong Password"});
             }
         } 
         else 
         {
-            console.log("No such User, Please register first.");
+            res.json({nu:"No such User, Please Sign Up first"});
         }
     }).catch(function(error) {
         console.log("Error getting User :", error);

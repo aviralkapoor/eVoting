@@ -77,6 +77,30 @@
                 </div>
             </div>
         </div>
+            <div class="container cast_vote"></div>
+
+            <div id="place_vote" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg modal-center" role="content">
+                    <div class="modal-content">
+                        <div class="modal-header bg-light">
+                            <h4 class="modal-title card-custom">Cast Your Vote</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs nom_vote" id="myTab" role="tablist"></ul>
+                            <div class="tab-content nom_vote_info" id="myTabContent"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <form>
+                                <select class="browser-default custom-select choice" id="nominee">
+                                </select>
+                            </form>
+                            <div class="vote_btn"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
         <footer>
             <div class="container">
                 <div class="row">
@@ -125,6 +149,8 @@
           };
         firebase.initializeApp(firebaseConfig);
         </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -134,5 +160,6 @@
 <script src="js/mail.js"></script>
 <script src="js/script.js"></script>
 <script src="js/login.js"></script>
+<script src="js/elec.js"></script>
 </body>
 </html>
