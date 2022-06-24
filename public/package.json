@@ -23,7 +23,7 @@
     "express-session": "^1.17.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
-    "jsdom": "^15.2.1",
+    "jsdom": "^16.5.0",
     "mailer": "^0.6.7",
     "mysql": "^2.17.1",
     "nod": "^0.2.0",
